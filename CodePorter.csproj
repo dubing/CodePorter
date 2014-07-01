@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99383F60-2723-450F-A893-DB4047804F05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodePorter</RootNamespace>
+    <AssemblyName>CodePorter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\DbTableSource.cs" />
+    <Compile Include="Test\BaseEntity.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Core\CodeGenerator.cs" />
+    <Compile Include="Core\IDataSource.cs" />
+    <Compile Include="DataAccess\DbAccessCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess\DbAccessInformation.cs" />
+    <Compile Include="DataAccess\DbAccessor.cs" />
+    <Compile Include="DataAccess\DbAccessParameter.cs" />
+    <Compile Include="DataAccess\DbAccessParameterCollection.cs" />
+    <Compile Include="DataAccess\DbAccessType.cs" />
+    <Compile Include="DataAccess\DbDataPager.cs" />
+    <Compile Include="DataAccess\OdbcAccessCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess\OleDbAccessCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess\OracleAccessCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataAccess\SqlAccessCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\SqlConstants.cs" />
+    <Compile Include="Test\TEST.cs" />
+    <Compile Include="Test\TestDA.cs" />
+    <Compile Include="Utility\Arithmetic.cs" />
+    <Compile Include="Utility\BytesHelper.cs" />
+    <Compile Include="Utility\CreateInstanceHandler.cs" />
+    <Compile Include="Utility\DataConvert.cs" />
+    <Compile Include="Utility\DataProcessHandler.cs" />
+    <Compile Include="Utility\DataProcessProxy.cs" />
+    <Compile Include="Utility\DictionaryEnumerator.cs" />
+    <Compile Include="Utility\FileCache.cs" />
+    <Compile Include="Utility\Generic.cs" />
+    <Compile Include="Utility\LogCounter.cs" />
+    <Compile Include="Utility\Logger.cs" />
+    <Compile Include="Utility\LogObject.cs" />
+    <Compile Include="Utility\ParameterChecker.cs" />
+    <Compile Include="Utility\ReadChildElementHandler.cs" />
+    <Compile Include="Utility\ReadFileHandler.cs" />
+    <Compile Include="Utility\SerializeHelper.cs" />
+    <Compile Include="Utility\Singleton.cs" />
+    <Compile Include="Utility\TraceObject.cs" />
+    <Compile Include="Utility\Tracer.cs" />
+    <Compile Include="Utility\TypeHelper.cs" />
+    <Compile Include="Utility\XmlCache.cs" />
+    <Compile Include="Utility\XmlHelper.cs" />
+    <Compile Include="Utility\XmlSkipingReader.cs" />
+    <Compile Include="Utility\XslCache.cs" />
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\DbEntityTemplate.xsl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\CodeSet.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\DATemplate.xsl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\BaseDbEntityTemplate.xsl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\SqlConstantsTemplate.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\BaseDATemplate.xsl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

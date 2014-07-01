@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="QuerySettings" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <sectionGroup name="generatorSettings">
+      <section name="ConstantsGenerator" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <section name="BaseDbEntityGenerator" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
+      <section name="DbEntityGenerator" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <section name="BaseDAGenerator" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <section name="DAGenerator" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </sectionGroup>
+    <sectionGroup name="sourceSettings">
+      <section name="TravelMoneyDB" type="System.Configuration.NameValueSectionHandler,System, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    </sectionGroup>
+  </configSections>
+  <appSettings>
+    <add key="UsableSettings" value="TravelMoneyDB"/>
+  </appSettings>
+  <sourceSettings>
+    <TravelMoneyDB>
+      <CheckedNodes>Tables</CheckedNodes>
+      <TableGenerator>ConstantsGenerator,BaseDbEntityGenerator,DbEntityGenerator,BaseDAGenerator,DAGenerator</TableGenerator>
+      <ViewGenerator></ViewGenerator>
+      <SourceName>CodePorter</SourceName>
+    </TravelMoneyDB>
+  </sourceSettings>
+  <generatorSettings>
+    <ConstantsGenerator>
+      <add key="DataSourceType" value="CodePorter.Core.DbTableSource"/>
+      <add key="XslTemplate" value="CodePorter.Templates.SqlConstantsTemplate.xsl"/>
+      <add key="TargetFile" value=".\Repository\SqlConstants.cs"/>
+      <add key="BeginRegion" value="#region select command,#region sp name"/>
+      <add key="EndRegion" value="#endregion,#endregion"/>
+    </ConstantsGenerator>
+    <BaseDbEntityGenerator>
+      <add key="DataSourceType" value="CodePorter.Core.DbTableSource"/>
+      <add key="XslTemplate" value="CodePorter.Templates.BaseDbEntityTemplate.xsl"/>
+      <add key="TargetFile" value=".\Entity\BaseEntity.cs"/>
+    </BaseDbEntityGenerator>
+    <DbEntityGenerator>
+      <add key="DataSourceType" value="CodePorter.Core.DbTableSource"/>
+      <add key="XslTemplate" value="CodePorter.Templates.DbEntityTemplate.xsl"/>
+      <add key="TargetFile" value=".\Entity\%BASENAME%Entity.cs"/>
+    </DbEntityGenerator>
+    <BaseDAGenerator>
+      <add key="DataSourceType" value="CodePorter.Core.DbTableSource"/>
+      <add key="XslTemplate" value="CodePorter.Templates.BaseDATemplate.xsl"/>
+      <add key="TargetFile" value=".\Repository\BaseDA.cs"/>
+    </BaseDAGenerator>
+    <DAGenerator>
+      <add key="DataSourceType" value="CodePorter.Core.DbTableSource"/>
+      <add key="XslTemplate" value="CodePorter.Templates.DATemplate.xsl"/>
+      <add key="TargetFile" value=".\Repository\%BASENAME%DA.cs"/>
+    </DAGenerator>
+  </generatorSettings>
+</configuration>
