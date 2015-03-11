@@ -130,8 +130,7 @@
             this.txtDBConnection.Name = "txtDBConnection";
             this.txtDBConnection.Size = new System.Drawing.Size(392, 50);
             this.txtDBConnection.TabIndex = 24;
-            this.txtDBConnection.Text = "Server=devdb.dev.sh.ctriptravel.com,28747;UID=uws_W_GrapeTravelMoney_dev;password" +
-    "=Dyu3UR0bJBun;database=TravelMoneyDB;";
+            this.txtDBConnection.Text = "Server=10.2.5.184;UID=b_du;password=123456;database=LiteSpeedCentral;";
             // 
             // label4
             // 

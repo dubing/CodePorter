@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\DbTableSource.cs" />
-    <Compile Include="Test\BaseEntity.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Core\CodeGenerator.cs" />
     <Compile Include="Core\IDataSource.cs" />
@@ -90,9 +89,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\SqlConstants.cs" />
-    <Compile Include="Test\TEST.cs" />
-    <Compile Include="Test\TestDA.cs" />
     <Compile Include="Utility\Arithmetic.cs" />
     <Compile Include="Utility\BytesHelper.cs" />
     <Compile Include="Utility\CreateInstanceHandler.cs" />
